@@ -1,0 +1,1403 @@
+{
+	"name": "Cart",
+	"version": "1.1.9",
+	"description": "Sell and distribute your content via Stripe or Braintree.",
+	"description_long": "Allows for the sale and distribution of your content via Stripe or Braintree",
+	"demo": "http://koken.me",
+	"author": {
+		"name": "Koken",
+		"link": "https://store.koken.me/authors/koken"
+	},
+
+	"koken_version_required": "0.22.22-beta.5",
+
+	"data": {
+		"koken_cart_active": {
+			"label": "Enable live orders on your published site",
+			"type": "boolean",
+			"value": false
+		},
+		"koken_cart_purchasable": {
+			"label": "Images for purchase",
+			"type": "select",
+			"options": [
+			  { "label":"All images", "value": "all" },
+			  { "label":"Images marked as purchasable", "value": "some" },
+			  { "label":"No images", "value": "none" }
+			],
+			"value": "some"
+		},
+		"koken_cart_currency": {
+			"label": "Currency",
+			"type": "select",
+			"options": [
+				{ "label": "Albanian Lek", "value": "ALL" },
+				{ "label": "Algerian Dinar", "value": "DZD" },
+				{ "label": "Angolan Kwanza", "value": "AOA" },
+				{ "label": "Argentine Peso", "value": "ARS" },
+				{ "label": "Armenian Dram", "value": "AMD" },
+				{ "label": "Aruban Florin", "value": "AWG" },
+				{ "label": "Australian Dollar", "value": "AUD" },
+				{ "label": "Azerbaijani Manat", "value": "AZN" },
+				{ "label": "Bahamian Dollar", "value": "BSD" },
+				{ "label": "Bangladeshi Taka", "value": "BDT" },
+				{ "label": "Barbadian Dollar", "value": "BBD" },
+				{ "label": "Belize Dollar", "value": "BZD" },
+				{ "label": "Bermudian Dollar", "value": "BMD" },
+				{ "label": "Bolivian Boliviano", "value": "BOB" },
+				{ "label": "Bosnia and Herzegovina Convertible Mark", "value": "BAM" },
+				{ "label": "Botswana Pula", "value": "BWP" },
+				{ "label": "Brazilian Real", "value": "BRL" },
+				{ "label": "British Pound", "value": "GBP" },
+				{ "label": "Brunei Dollar", "value": "BND" },
+				{ "label": "Bulgarian Lev", "value": "BGN" },
+				{ "label": "Burundian Franc", "value": "BIF" },
+				{ "label": "Cambodian Riel", "value": "KHR" },
+				{ "label": "Canadian Dollar", "value": "CAD" },
+				{ "label": "Cape Verdean Escudo", "value": "CVE" },
+				{ "label": "Cayman Islands Dollar", "value": "KYD" },
+				{ "label": "Central African Cfa Franc", "value": "XAF" },
+				{ "label": "Cfp Franc", "value": "XPF" },
+				{ "label": "Chilean Peso", "value": "CLP" },
+				{ "label": "Chinese Renminbi Yuan", "value": "CNY" },
+				{ "label": "Colombian Peso", "value": "COP" },
+				{ "label": "Comorian Franc", "value": "KMF" },
+				{ "label": "Costa Rican Colón", "value": "CRC" },
+				{ "label": "Croatian Kuna", "value": "HRK" },
+				{ "label": "Czech Koruna", "value": "CZK" },
+				{ "label": "Danish Krone", "value": "DKK" },
+				{ "label": "Djiboutian Franc", "value": "DJF" },
+				{ "label": "Dominican Peso", "value": "DOP" },
+				{ "label": "East Caribbean Dollar", "value": "XCD" },
+				{ "label": "Egyptian Pound", "value": "EGP" },
+				{ "label": "Ethiopian Birr", "value": "ETB" },
+				{ "label": "Euro", "value": "EUR" },
+				{ "label": "Falkland Pound", "value": "FKP" },
+				{ "label": "Fijian Dollar", "value": "FJD" },
+				{ "label": "Gambian Dalasi", "value": "GMD" },
+				{ "label": "Georgian Lari", "value": "GEL" },
+				{ "label": "Gibraltar Pound", "value": "GIP" },
+				{ "label": "Guatemalan Quetzal", "value": "GTQ" },
+				{ "label": "Guinean Franc", "value": "GNF" },
+				{ "label": "Guyanese Dollar", "value": "GYD" },
+				{ "label": "Haitian Gourde", "value": "HTG" },
+				{ "label": "Honduran Lempira", "value": "HNL" },
+				{ "label": "Hong Kong Dollar", "value": "HKD" },
+				{ "label": "Hungarian Forint", "value": "HUF" },
+				{ "label": "Icelandic Króna", "value": "ISK" },
+				{ "label": "Indian Rupee", "value": "INR" },
+				{ "label": "Indonesian Rupiah", "value": "IDR" },
+				{ "label": "Israeli New Sheqel", "value": "ILS" },
+				{ "label": "Jamaican Dollar", "value": "JMD" },
+				{ "label": "Japanese Yen", "value": "JPY" },
+				{ "label": "Kazakhstani Tenge", "value": "KZT" },
+				{ "label": "Kenyan Shilling", "value": "KES" },
+				{ "label": "Kyrgyzstani Som", "value": "KGS" },
+				{ "label": "Lao Kip", "value": "LAK" },
+				{ "label": "Lebanese Lira", "value": "LBP" },
+				{ "label": "Lesotho Loti", "value": "LSL" },
+				{ "label": "Liberian Dollar", "value": "LRD" },
+				{ "label": "Macanese Pataca", "value": "MOP" },
+				{ "label": "Macedonian Denar", "value": "MKD" },
+				{ "label": "Malawian Kwacha", "value": "MWK" },
+				{ "label": "Malaysian Ringgit", "value": "MYR" },
+				{ "label": "Maldivian Rufiyaa", "value": "MVR" },
+				{ "label": "Mauritian Rupee", "value": "MUR" },
+				{ "label": "Mexican Peso", "value": "MXN" },
+				{ "label": "Moldovan Leu", "value": "MDL" },
+				{ "label": "Mongolian Tögrög", "value": "MNT" },
+				{ "label": "Moroccan Dirham", "value": "MAD" },
+				{ "label": "Namibian Dollar", "value": "NAD" },
+				{ "label": "Nepalese Rupee", "value": "NPR" },
+				{ "label": "Netherlands Antillean Gulden", "value": "ANG" },
+				{ "label": "New Taiwan Dollar", "value": "TWD" },
+				{ "label": "New Zealand Dollar", "value": "NZD" },
+				{ "label": "Nicaraguan Córdoba", "value": "NIO" },
+				{ "label": "Nigerian Naira", "value": "NGN" },
+				{ "label": "Norwegian Krone", "value": "NOK" },
+				{ "label": "Pakistani Rupee", "value": "PKR" },
+				{ "label": "Panamanian Balboa", "value": "PAB" },
+				{ "label": "Papua New Guinean Kina", "value": "PGK" },
+				{ "label": "Paraguayan Guaraní", "value": "PYG" },
+				{ "label": "Peruvian Nuevo Sol", "value": "PEN" },
+				{ "label": "Philippine Peso", "value": "PHP" },
+				{ "label": "Polish Złoty", "value": "PLN" },
+				{ "label": "Qatari Riyal", "value": "QAR" },
+				{ "label": "Romanian Leu", "value": "RON" },
+				{ "label": "Russian Ruble", "value": "RUB" },
+				{ "label": "Rwandan Franc", "value": "RWF" },
+				{ "label": "Saint Helenian Pound", "value": "SHP" },
+				{ "label": "Salvadoran Colón", "value": "SVC" },
+				{ "label": "Samoan Tala", "value": "WST" },
+				{ "label": "São Tomé and Príncipe Dobra", "value": "STD" },
+				{ "label": "Saudi Riyal", "value": "SAR" },
+				{ "label": "Serbian Dinar", "value": "RSD" },
+				{ "label": "Seychellois Rupee", "value": "SCR" },
+				{ "label": "Sierra Leonean Leone", "value": "SLL" },
+				{ "label": "Singapore Dollar", "value": "SGD" },
+				{ "label": "Solomon Islands Dollar", "value": "SBD" },
+				{ "label": "Somali Shilling", "value": "SOS" },
+				{ "label": "South African Rand", "value": "ZAR" },
+				{ "label": "South Korean Won", "value": "KRW" },
+				{ "label": "Sri Lankan Rupee", "value": "LKR" },
+				{ "label": "Swazi Lilangeni", "value": "SZL" },
+				{ "label": "Swedish Krona", "value": "SEK" },
+				{ "label": "Swiss Franc", "value": "CHF" },
+				{ "label": "Tanzanian Shilling", "value": "TZS" },
+				{ "label": "Thai Baht", "value": "THB" },
+				{ "label": "Tongan Paʻanga", "value": "TOP" },
+				{ "label": "Trinidad and Tobago Dollar", "value": "TTD" },
+				{ "label": "Turkish New Lira", "value": "TRY" },
+				{ "label": "Ugandan Shilling", "value": "UGX" },
+				{ "label": "Ukrainian Hryvnia", "value": "UAH" },
+				{ "label": "United Arab Emirates Dirham", "value": "AED" },
+				{ "label": "United States Dollar", "value": "USD" },
+				{ "label": "Uruguayan Peso", "value": "UYU" },
+				{ "label": "Uzbekistani Som", "value": "UZS" },
+				{ "label": "Vanuatu Vatu", "value": "VUV" },
+				{ "label": "Vietnamese Đồng", "value": "VND" },
+				{ "label": "West African Cfa Franc", "value": "XOF" },
+				{ "label": "Yemeni Rial", "value": "YER" }
+			],
+			"value": "USD"
+		},
+		"koken_cart_processor": {
+			"label": "Payment processor",
+			"type": "select",
+			"options": [
+			  { "label":"Stripe", "value": "stripe" },
+			  { "label":"Braintree with PayPal", "value": "braintree" }
+			],
+			"value": "stripe"
+		},
+		"koken_cart_stripe_hide_test_keys": {
+			"label": "Hide Stripe test keys",
+			"type": "boolean",
+			"value": true,
+			"dependencies": {
+				"evaluate": "all",
+				"conditions": [
+					{
+						"option": "koken_cart_processor",
+						"equals": "stripe"
+					}
+				]
+			}
+		},
+		"koken_cart_test_private_key": {
+			"label": "Stripe test secret key",
+			"type": "string",
+			"info": "Stripe testing key used in Koken Site Drafts ( https://dashboard.stripe.com/account/apikeys )",
+			"dependencies": {
+				"evaluate": "all",
+				"conditions": [
+					{
+						"option": "koken_cart_processor",
+						"equals": "stripe"
+					},
+					{
+						"option": "koken_cart_stripe_hide_test_keys",
+						"equals": false
+					}
+				]
+			}
+		},
+		"koken_cart_test_public_key": {
+			"label": "Stripe test publishable key",
+			"type": "string",
+			"info": "Stripe testing key used in Koken Site Drafts ( https://dashboard.stripe.com/account/apikeys )",
+			"dependencies": {
+				"evaluate": "all",
+				"conditions": [
+					{
+						"option": "koken_cart_processor",
+						"equals": "stripe"
+					},
+					{
+						"option": "koken_cart_stripe_hide_test_keys",
+						"equals": false
+					}
+				]
+			}
+		},
+		"koken_cart_private_key": {
+			"label": "Stripe live secret key",
+			"type": "string",
+			"info": "Stripe live key used in Koken Published Sites ( https://dashboard.stripe.com/account/apikeys )",
+			"dependencies": {
+				"evaluate": "all",
+				"conditions": [
+					{
+						"option": "koken_cart_processor",
+						"equals": "stripe"
+					}
+				]
+			}
+		},
+		"koken_cart_public_key": {
+			"label": "Stripe live publishable key",
+			"type": "string",
+			"info": "Stripe live key used in Koken Published Sites ( https://dashboard.stripe.com/account/apikeys )",
+			"dependencies": {
+				"evaluate": "all",
+				"conditions": [
+					{
+						"option": "koken_cart_processor",
+						"equals": "stripe"
+					}
+				]
+			}
+		},
+		"koken_cart_bt_hide_sandbox_keys": {
+			"label": "Hide Braintree sandbox keys",
+			"type": "boolean",
+			"value": true,
+			"dependencies": {
+				"evaluate": "all",
+				"conditions": [
+					{
+						"option": "koken_cart_processor",
+						"equals": "braintree"
+					}
+				]
+			}
+		},
+		"koken_cart_bt_sandbox_public_key": {
+			"label": "Sandbox public key",
+			"type": "string",
+			"info": "From the Braintree Sandbox Control Panel navigate to Account > My user.  Under \"API Keys, Tokenization Keys, Encryption Keys\", click View Authorizations.",
+			"dependencies": {
+				"evaluate": "all",
+				"conditions": [
+					{
+						"option": "koken_cart_processor",
+						"equals": "braintree"
+					},
+					{
+						"option": "koken_cart_bt_hide_sandbox_keys",
+						"equals": false
+					}
+				]
+			}
+		},
+		"koken_cart_bt_sandbox_private_key": {
+			"label": "Sandbox private key",
+			"type": "string",
+			"info": "From the Braintree Sandbox Control Panel navigate to Account > My user.  Under \"API Keys, Tokenization Keys, Encryption Keys\", click View Authorizations.",
+			"dependencies": {
+				"evaluate": "all",
+				"conditions": [
+					{
+						"option": "koken_cart_processor",
+						"equals": "braintree"
+					},
+					{
+						"option": "koken_cart_bt_hide_sandbox_keys",
+						"equals": false
+					}
+				]
+			}
+		},
+		"koken_cart_bt_sandbox_merchant_id": {
+			"label": "Sandbox merchant id",
+			"type": "string",
+			"info": "From the Braintree Sandbox Control Panel navigate to Account > My user.  Under \"API Keys, Tokenization Keys, Encryption Keys\", click View Authorizations.",
+			"dependencies": {
+				"evaluate": "all",
+				"conditions": [
+					{
+						"option": "koken_cart_processor",
+						"equals": "braintree"
+					},
+					{
+						"option": "koken_cart_bt_hide_sandbox_keys",
+						"equals": false
+					}
+				]
+			}
+		},
+		"koken_cart_bt_production_public_key": {
+			"label": "Production public key",
+			"type": "string",
+			"info": "From the Braintree Production Control Panel navigate to Account > My user.  Under \"API Keys, Tokenization Keys, Encryption Keys\", click View Authorizations.",
+			"dependencies": {
+				"evaluate": "all",
+				"conditions": [
+					{
+						"option": "koken_cart_processor",
+						"equals": "braintree"
+					}
+				]
+			}
+		},
+		"koken_cart_bt_production_private_key": {
+			"label": "Production private key",
+			"type": "string",
+			"info": "From the Braintree Production Control Panel navigate to Account > My user.  Under \"API Keys, Tokenization Keys, Encryption Keys\", click View Authorizations.",
+			"dependencies": {
+				"evaluate": "all",
+				"conditions": [
+					{
+						"option": "koken_cart_processor",
+						"equals": "braintree"
+					}
+				]
+			}
+		},
+		"koken_cart_bt_production_merchant_id": {
+			"label": "Production merchant id",
+			"type": "string",
+			"info": "From the Braintree Production Control Panel navigate to Account > My user.  Under \"API Keys, Tokenization Keys, Encryption Keys\", click View Authorizations.",
+			"dependencies": {
+				"evaluate": "all",
+				"conditions": [
+					{
+						"option": "koken_cart_processor",
+						"equals": "braintree"
+					}
+				]
+			}
+		},
+		"koken_cart_custom_variants": {
+			"label": "Create custom order options",
+			"type": "boolean",
+			"value": false
+		},
+		"koken_cart_variant_description_1": {
+			"label": "Option 1",
+			"type": "string",
+			"dependencies": {
+				"evaluate": "all",
+				"conditions": [
+					{
+						"option": "koken_cart_custom_variants",
+						"equals": true
+					}
+				]
+			}
+		},
+		"koken_cart_variant_price_1": {
+			"label": "",
+			"suffix": "Price",
+			"type": "number",
+			"min": 0,
+			"step": "any",
+			"dependencies": {
+				"evaluate": "all",
+				"conditions": [
+					{
+						"option": "koken_cart_custom_variants",
+						"equals": true
+					}
+				]
+			}
+		},
+		"koken_cart_variant_description_2": {
+			"label": "Option 2",
+			"type": "string",
+			"dependencies": {
+				"evaluate": "all",
+				"conditions": [
+					{
+						"option": "koken_cart_custom_variants",
+						"equals": true
+					},
+					{
+						"option": "koken_cart_variant_description_1",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_1",
+						"not": ""
+					}
+				]
+			}
+		},
+		"koken_cart_variant_price_2": {
+			"label": "",
+			"suffix": "Price",
+			"type": "number",
+			"min": 0,
+			"step": "any",
+			"dependencies": {
+				"evaluate": "all",
+				"conditions": [
+					{
+						"option": "koken_cart_custom_variants",
+						"equals": true
+					},
+					{
+						"option": "koken_cart_variant_description_1",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_1",
+						"not": ""
+					}
+				]
+			}
+		},
+		"koken_cart_variant_description_3": {
+			"label": "Option 3",
+			"type": "string",
+			"dependencies": {
+				"evaluate": "all",
+				"conditions": [
+					{
+						"option": "koken_cart_custom_variants",
+						"equals": true
+					},
+					{
+						"option": "koken_cart_variant_description_1",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_1",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_2",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_2",
+						"not": ""
+					}
+				]
+			}
+		},
+		"koken_cart_variant_price_3": {
+			"label": "",
+			"suffix": "Price",
+			"type": "number",
+			"min": 0,
+			"step": "any",
+			"dependencies": {
+				"evaluate": "all",
+				"conditions": [
+					{
+						"option": "koken_cart_custom_variants",
+						"equals": true
+					},
+					{
+						"option": "koken_cart_variant_description_1",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_1",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_2",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_2",
+						"not": ""
+					}
+				]
+			}
+		},
+		"koken_cart_variant_description_4": {
+			"label": "Option 4",
+			"type": "string",
+			"dependencies": {
+				"evaluate": "all",
+				"conditions": [
+					{
+						"option": "koken_cart_custom_variants",
+						"equals": true
+					},
+					{
+						"option": "koken_cart_variant_description_1",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_1",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_2",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_2",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_3",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_3",
+						"not": ""
+					}
+				]
+			}
+		},
+		"koken_cart_variant_price_4": {
+			"label": "",
+			"suffix": "Price",
+			"type": "number",
+			"min": 0,
+			"step": "any",
+			"dependencies": {
+				"evaluate": "all",
+				"conditions": [
+					{
+						"option": "koken_cart_custom_variants",
+						"equals": true
+					},
+					{
+						"option": "koken_cart_variant_description_1",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_1",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_2",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_2",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_3",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_3",
+						"not": ""
+					}
+				]
+			}
+		},
+		"koken_cart_variant_description_5": {
+			"label": "Option 5",
+			"type": "string",
+			"dependencies": {
+				"evaluate": "all",
+				"conditions": [
+					{
+						"option": "koken_cart_custom_variants",
+						"equals": true
+					},
+					{
+						"option": "koken_cart_variant_description_1",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_1",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_2",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_2",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_3",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_3",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_4",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_4",
+						"not": ""
+					}
+				]
+			}
+		},
+		"koken_cart_variant_price_5": {
+			"label": "",
+			"suffix": "Price",
+			"type": "number",
+			"min": 0,
+			"step": "any",
+			"dependencies": {
+				"evaluate": "all",
+				"conditions": [
+					{
+						"option": "koken_cart_custom_variants",
+						"equals": true
+					},
+					{
+						"option": "koken_cart_variant_description_1",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_1",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_2",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_2",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_3",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_3",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_4",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_4",
+						"not": ""
+					}
+				]
+			}
+		},
+		"koken_cart_variant_description_6": {
+			"label": "Option 6",
+			"type": "string",
+			"dependencies": {
+				"evaluate": "all",
+				"conditions": [
+					{
+						"option": "koken_cart_custom_variants",
+						"equals": true
+					},
+					{
+						"option": "koken_cart_variant_description_1",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_1",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_2",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_2",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_3",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_3",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_4",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_4",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_5",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_5",
+						"not": ""
+					}
+				]
+			}
+		},
+		"koken_cart_variant_price_6": {
+			"label": "",
+			"suffix": "Price",
+			"type": "number",
+			"min": 0,
+			"step": "any",
+			"dependencies": {
+				"evaluate": "all",
+				"conditions": [
+					{
+						"option": "koken_cart_custom_variants",
+						"equals": true
+					},
+					{
+						"option": "koken_cart_variant_description_1",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_1",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_2",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_2",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_3",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_3",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_4",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_4",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_5",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_5",
+						"not": ""
+					}
+				]
+			}
+		},
+		"koken_cart_variant_description_7": {
+			"label": "Option 7",
+			"type": "string",
+			"dependencies": {
+				"evaluate": "all",
+				"conditions": [
+					{
+						"option": "koken_cart_custom_variants",
+						"equals": true
+					},
+					{
+						"option": "koken_cart_variant_description_1",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_1",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_2",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_2",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_3",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_3",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_4",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_4",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_5",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_5",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_6",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_6",
+						"not": ""
+					}
+				]
+			}
+		},
+		"koken_cart_variant_price_7": {
+			"label": "",
+			"suffix": "Price",
+			"type": "number",
+			"min": 0,
+			"step": "any",
+			"dependencies": {
+				"evaluate": "all",
+				"conditions": [
+					{
+						"option": "koken_cart_custom_variants",
+						"equals": true
+					},
+					{
+						"option": "koken_cart_variant_description_1",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_1",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_2",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_2",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_3",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_3",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_4",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_4",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_5",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_5",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_6",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_6",
+						"not": ""
+					}
+				]
+			}
+		},
+		"koken_cart_variant_description_8": {
+			"label": "Option 8",
+			"type": "string",
+			"dependencies": {
+				"evaluate": "all",
+				"conditions": [
+					{
+						"option": "koken_cart_custom_variants",
+						"equals": true
+					},
+					{
+						"option": "koken_cart_variant_description_1",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_1",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_2",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_2",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_3",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_3",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_4",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_4",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_5",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_5",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_6",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_6",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_7",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_7",
+						"not": ""
+					}
+				]
+			}
+		},
+		"koken_cart_variant_price_8": {
+			"label": "",
+			"suffix": "Price",
+			"type": "number",
+			"min": 0,
+			"step": "any",
+			"dependencies": {
+				"evaluate": "all",
+				"conditions": [
+					{
+						"option": "koken_cart_custom_variants",
+						"equals": true
+					},
+					{
+						"option": "koken_cart_variant_description_1",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_1",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_2",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_2",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_3",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_3",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_4",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_4",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_5",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_5",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_6",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_6",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_7",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_7",
+						"not": ""
+					}
+				]
+			}
+		},
+		"koken_cart_variant_description_9": {
+			"label": "Option 9",
+			"type": "string",
+			"dependencies": {
+				"evaluate": "all",
+				"conditions": [
+					{
+						"option": "koken_cart_custom_variants",
+						"equals": true
+					},
+					{
+						"option": "koken_cart_variant_description_1",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_1",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_2",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_2",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_3",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_3",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_4",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_4",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_5",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_5",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_6",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_6",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_7",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_7",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_8",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_8",
+						"not": ""
+					}
+				]
+			}
+		},
+		"koken_cart_variant_price_9": {
+			"label": "",
+			"suffix": "Price",
+			"type": "number",
+			"min": 0,
+			"step": "any",
+			"dependencies": {
+				"evaluate": "all",
+				"conditions": [
+					{
+						"option": "koken_cart_custom_variants",
+						"equals": true
+					},
+					{
+						"option": "koken_cart_variant_description_1",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_1",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_2",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_2",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_3",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_3",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_4",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_4",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_5",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_5",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_6",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_6",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_7",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_7",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_8",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_8",
+						"not": ""
+					}
+				]
+			}
+		},
+		"koken_cart_variant_description_10": {
+			"label": "Option 10",
+			"type": "string",
+			"dependencies": {
+				"evaluate": "all",
+				"conditions": [
+					{
+						"option": "koken_cart_custom_variants",
+						"equals": true
+					},
+					{
+						"option": "koken_cart_variant_description_1",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_1",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_2",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_2",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_3",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_3",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_4",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_4",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_5",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_5",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_6",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_6",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_7",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_7",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_8",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_8",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_9",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_9",
+						"not": ""
+					}
+				]
+			}
+		},
+		"koken_cart_variant_price_10": {
+			"label": "",
+			"suffix": "Price",
+			"type": "number",
+			"min": 0,
+			"step": "any",
+			"dependencies": {
+				"evaluate": "all",
+				"conditions": [
+					{
+						"option": "koken_cart_custom_variants",
+						"equals": true
+					},
+					{
+						"option": "koken_cart_variant_description_1",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_1",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_2",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_2",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_3",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_3",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_4",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_4",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_5",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_5",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_6",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_6",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_7",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_7",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_8",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_8",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_description_9",
+						"not": ""
+					},
+					{
+						"option": "koken_cart_variant_price_9",
+						"not": ""
+					}
+				]
+			}
+		},
+		"koken_cart_shipping": {
+			"label": "Collect a shipping address",
+			"type": "boolean",
+			"value": false
+		},
+		"koken_cart_digital": {
+			"label": "Enable instant digital downloads after purchase",
+			"type": "boolean",
+			"value": true
+		},
+		"koken_cart_digital_price": {
+			"label": "",
+			"suffix": "Default digital download price",
+			"type": "number",
+			"min": 0,
+			"step": "any",
+			"dependencies": {
+				"evaluate": "all",
+				"conditions": [
+					{
+						"option": "koken_cart_digital",
+						"equals": true
+					}
+				]
+			}
+		}
+	}
+}
